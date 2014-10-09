@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Measuring the impact of Hacker News on public GitHub projects</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Measuring the impact of HackerNews on open source GitHub projects</h2>
+					<p>Carmen Jaramillo &middot; Bin Bin Lee &middot; Brian Zelip</p>
+					<p><small>Data Mining LEEP Day, Fall 2014</small></p>
+				</section>
+
+				<section>
+					<h3>Hypothesis</h3>
+					<p><em>Posting information about a project on Hacker News makes a big impact on open source projects.</em></p>
+					<br><br><p>...we set out to detail this impact.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h3>Method</h3>
+					<ol>
+						<li>Pick 5 public projects</li>
+						<li>Identify the project's initial post on HN</li>
+						<li>Collect before &amp; after data via GitHub &amp; GitHub Archive APIs</li>
+						<li>Present findings</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>The before &amp; after evidence</h3>
+					<ul>
+						<li>pull requests</li>
+						<li>forks</li>
+						<li>stars</li>
+						<li>watchers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Data collection work</h3>
+					<ul>
+						<li>read about and practiced the 2 GH APIs
+							<ul>
+								<li>GitHub API via command line, see https://developer.github.com/v3/</li>
+								<li>GitHubArchive API via Google Big Query, see http://www.githubarchive.org</li>
+							</ul></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>#*&amp;@% Snafus</h3>
+					<ul>
+						<li>Obtaining precise before data was difficult</li>
+					</ul>
+
+					
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
